@@ -1,0 +1,114 @@
+{
+  "skill": {
+    "name": "amazon-scraper",
+    "title": "Amazon 商品数据爬虫",
+    "description": "爬取 Amazon 商品数据，自动生成 Excel + Markdown 报告，支持品牌分析、爆款识别",
+    "version": "1.0.0",
+    "category": "E-commerce",
+    "tags": ["amazon", "scraper", "crawler", "ecommerce", "data", "excel", "apify"],
+    "author": {
+      "name": "Elden",
+      "github": "zuokun300",
+      "email": "zuokun300@gmail.com"
+    },
+    "license": "MIT",
+    "repository": "https://github.com/zuokun300/amazon-scraper",
+    "homepage": "https://github.com/zuokun300/amazon-scraper",
+    "documentation": "SKILL.md"
+  },
+  "installation": {
+    "method": "git",
+    "command": "git clone https://github.com/zuokun300/amazon-scraper.git",
+    "requirements": "requirements.txt",
+    "environment": {
+      "APIFY_API_KEY": {
+        "required": true,
+        "description": "Apify API Key，从 https://console.apify.com/account/integrations 获取"
+      }
+    }
+  },
+  "usage": {
+    "basic": "python3 amazon_scraper.py",
+    "advanced": "python3 amazon_scraper.py -k 'women shoes' -n 100 -o ./output",
+    "examples": [
+      {
+        "title": "基础用法",
+        "command": "python3 amazon_scraper.py",
+        "description": "使用默认关键词爬取"
+      },
+      {
+        "title": "自定义关键词",
+        "command": "python3 amazon_scraper.py -k 'men sneakers'",
+        "description": "爬取男性运动鞋数据"
+      },
+      {
+        "title": "多关键词批量爬取",
+        "command": "python3 amazon_scraper.py -k 'women shoes' 'men boots' 'kids sneakers'",
+        "description": "同时爬取多个品类"
+      },
+      {
+        "title": "指定输出数量",
+        "command": "python3 amazon_scraper.py -n 100",
+        "description": "爬取前 100 个商品"
+      }
+    ]
+  },
+  "output": {
+    "files": [
+      {
+        "name": "amazon-data-YYYYMMDD_HHMMSS.xlsx",
+        "description": "Excel 数据表，包含商品数据、品牌统计"
+      },
+      {
+        "name": "amazon-report-YYYYMMDD_HHMMSS.md",
+        "description": "Markdown 报告，包含商品列表、品牌分布"
+      }
+    ],
+    "format": {
+      "excel_sheets": ["商品数据", "统计摘要"],
+      "columns": ["排名", "商品名称", "品牌", "类型", "ASIN", "价格", "图片链接", "Amazon 链接"]
+    }
+  },
+  "pricing": {
+    "model": "freemium",
+    "free_tier": {
+      "description": "Apify 免费额度 $5/月",
+      "limit": "约 500-1000 个商品/月"
+    },
+    "paid_tier": {
+      "description": "Apify 付费套餐",
+      "starting_at": "$49/月"
+    }
+  },
+  "features": [
+    "✅ 自动爬取 Amazon 搜索结果是",
+    "✅ 提取 ASIN、品牌、商品类型",
+    "✅ 生成 Excel 数据表（带格式和超链接）",
+    "✅ 生成 Markdown 报告",
+    "✅ 品牌分布统计",
+    "✅ 爆款商品识别",
+    "✅ 支持多关键词批量爬取",
+    "✅ 可自定义输出数量"
+  ],
+  "limitations": [
+    "⚠️ 需要 Apify API Key（有免费额度）",
+    "⚠️ 价格数据需要深度爬取模式（v2.0 计划）",
+    "⚠️ 不支持实时价格监控（v2.0 计划）"
+  ],
+  "changelog": {
+    "1.0.0": {
+      "date": "2026-03-03",
+      "changes": [
+        "初始版本发布",
+        "基础爬取功能",
+        "Excel + Markdown 报告生成",
+        "品牌分布统计"
+      ]
+    }
+  },
+  "roadmap": {
+    "v1.1": "图片下载功能",
+    "v1.2": "深度爬取（价格/评分/评论数）",
+    "v2.0": "定时监控 + 价格告警"
+  }
+}

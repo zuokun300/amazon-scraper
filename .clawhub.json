@@ -1,0 +1,23 @@
+{
+  "name": "amazon-scraper",
+  "version": "1.0.0",
+  "description": "Amazon 商品数据爬虫，生成 Excel + Markdown 报告",
+  "author": "Elden (@zuokun300)",
+  "license": "MIT",
+  "keywords": ["amazon", "scraper", "ecommerce", "crawler", "apify"],
+  "main": "amazon_scraper.py",
+  "requirements": "requirements.txt",
+  "repository": "https://github.com/zuokun300/amazon-scraper",
+  "homepage": "https://clawhub.ai/zuokun300/amazon-scraper",
+  "usage": {
+    "example": "python3 amazon_scraper.py",
+    "description": "爬取 Amazon 商品数据，生成结构化报告"
+  },
+  "config": {
+    "apify_token": {
+      "required": true,
+      "description": "Apify API Key",
+      "env": "APIFY_API_KEY"
+    }
+  }
+}
