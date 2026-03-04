@@ -26,7 +26,11 @@ wheels/
 # Output
 output/
 *.xlsx
-*.md
+
+# Keep docs
+!SKILL.md
+!README.md
+!USAGE.md
 
 # IDE
 .vscode/
